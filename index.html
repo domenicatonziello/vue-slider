@@ -33,7 +33,7 @@
             </div>
             <div id="gallery">
                 <div class="cover" >
-                    <img v-for="(pic,i) in pictures" v-bind:class="{'active' : i === currentIndex}" v-bind:src="pic.image" v-bind:alt="pic.title">
+                    <img v-for="(pic,i) in pictures" :class="{'active' : i === currentIndex}" :src="pic.image" :alt="pic.title" @click="changePic(i)">
                 </div>
             </div>
             <div>

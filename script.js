@@ -53,12 +53,14 @@ const app = Vue.createApp({
                     this.currentIndex = 0; 
                 }
 
-            } else{
+            } else if (target === 'up'){
                 this.currentIndex--;
                 if (this.currentIndex < 0){
                     this.currentIndex = this.pictures.length -1; 
                 }
 
+            } else {
+                this.currentIndex = target;
             }
         }
 
