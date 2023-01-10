@@ -15,29 +15,29 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <main class="container d-flex">
+    <main id="root" class="container d-flex">
         <!-- carousel -->
         <div id="carousel">
-            <div class="card active">
-                <img src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+            <div v-for="(pic,i) in pictures" class="card" v-show="i === currentIndex">
+                <img v-bind:src="pic.image" v-bind:alt="pic.title">
                 <div class="text">
-                  <h1> Marvel's Spiderman Miles Morale </h1>
-                  <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+                  <h1> {{ pic.title }} </h1>
+                  <p> {{ pic.text }}</p>
                 </div>
               </div>
         </div>
         <!-- thumbnails -->
         <div id="thumbnails">
-            <div id="up">
-                <i id="up" class="bi bi-arrow-up-circle"></i>
+            <div>
+                <i id="up" @click="changePic('up')" class="bi bi-arrow-up-circle"></i>
             </div>
             <div id="gallery">
-                <div class="cover active">
-                    <img src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+                <div class="cover" >
+                    <img v-for="(pic,i) in pictures" v-bind:class="{'active' : i === currentIndex}" v-bind:src="pic.image" v-bind:alt="pic.title">
                 </div>
             </div>
-            <div id="down">
-                <i id="down" class="bi bi-arrow-down-circle"></i>
+            <div>
+                <i id="down" @click="changePic('down')" class="bi bi-arrow-down-circle"></i>
             </div>
         </div>
     </main>

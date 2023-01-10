@@ -35,11 +35,8 @@ img{
 .card{
     height: 100%;
     position: relative;
-    display: none;
 }
-.card.active{
-    display: block;
-}
+
 .card .text{
     text-align: right;
     color: white;
@@ -62,7 +59,7 @@ img{
     height: calc(100% / 5);
     cursor: pointer;
 }
-.cover.active{
+.cover .active{
     border: 1px solid white;
 }
 #thumbnails .bi{
